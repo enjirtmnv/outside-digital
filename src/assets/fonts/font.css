@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url("./LabGrotesque-Medium/LabGrotesque-Medium.eot");
+    src: url("./LabGrotesque-Medium/LabGrotesque-Medium.eot?#iefix") format("embedded-opentype"),
+    url("./LabGrotesque-Medium/LabGrotesque-Medium.ttf") format("truetype"),
+    url("./LabGrotesque-Medium/LabGrotesque-Medium.woff") format("woff"),
+    url("./LabGrotesque-Medium/LabGrotesque-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url("./LabGrotesque-Regular/LabGrotesque-Regular.eot");
+    src: url("./LabGrotesque-Regular/LabGrotesque-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./LabGrotesque-Regular/LabGrotesque-Regular.ttf") format("truetype"),
+    url("./LabGrotesque-Regular/LabGrotesque-Regular.woff") format("woff"),
+    url("./LabGrotesque-Regular/LabGrotesque-Regular.woff2") format("woff2");
+    font-weight: 400;
+}

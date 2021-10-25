@@ -1,0 +1,23 @@
+.button {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 16px 32px;
+    background: transparent;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+    transition: all 200ms;
+}
+
+.button:hover, .button:active{
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.button:disabled {
+    background: #BEC5CC;
+    color: #FFFFFF;
+    border: 1px solid #BEC5CC;
+}

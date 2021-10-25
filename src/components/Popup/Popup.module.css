@@ -1,0 +1,135 @@
+.popup__wrap{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background: #B3B3B3;
+}
+
+.popup__content{
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 30px;
+    width: 552px;
+    padding: 32px;
+}
+
+.popup__wrap.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup__wrapCloseIcon{
+    position: absolute;
+    right: 4.9%;
+}
+
+.popup__closeIcon{
+    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.popup__title{
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.popup__descr{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #808080;
+    margin: 16px 0 0 0;
+}
+
+.popup__subtitle{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.popup__calculateButton{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #EA0029;
+    transition: all 200ms;
+}
+
+.popup__calculateButton:hover{
+    color: #F53A31;
+    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+}
+
+.popup__calculateButton:active{
+    color: #EA0029;
+}
+
+.popup__choiceWrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.popup__choiceListWrap{
+    display: flex;
+    flex-direction: row;
+}
+
+.popup__choiceListWrap li:nth-child(1){
+    margin: 0 0 0 32px;
+}
+
+.popup__choiceLabel{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 6px 12px;
+    margin: 0 16px 0 0;
+    background: #EEF0F2;
+    color: #000000;
+    border-radius: 50px;
+    border: none;
+    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+    transition: all 200ms;
+}
+
+.popup__choiceRadio{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+.popup__choiceRadio:checked ~ .popup__choiceLabel{
+    background: linear-gradient(255.35deg, #DC3131 0.83%, rgba(255, 79, 79, 0) 108.93%), #FF5E56;
+    color: #FFFFFF;
+}
+
+.popup__addButton{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 16px 0;
+    width: 100%;
+    background: linear-gradient(255.35deg, #DC3131 0.83%, rgba(255, 79, 79, 0) 108.93%), #FF5E56;
+    box-shadow: 0 0 24px rgba(234, 0, 41, 0.33);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+    margin: 40px 0 0 0;
+}
+
+.popup__addButton:hover, .popup__addButton:active{
+    background: #EA0029;
+}
+
+
