@@ -7,6 +7,9 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
   const [isRadioChoice, setRadioChoice] = useState('payment');
   const toggleRadio = (e) => setRadioChoice(e.target.value);
 
+  const [salary, setSalary] = useState('');
+  const handleChangeSalary = (e) => setSalary(e.target.value);
+
   const togglePopup = () => setPopupOpen(!isPopupOpen);
   const stopPropagationContent = e => e.stopPropagation();
 
@@ -40,26 +43,51 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
 
         <div>
           <p className={css.popup__subtitle}>Ваша зарплата в месяц</p>
-          <label htmlFor="">
-            <input type="text"/>
+          <label
+            htmlFor="salary"
+          >
+            <input
+              type="text"
+              className={css.popup__salary}
+              name={'salary'}
+              value={salary}
+              onChange={handleChangeSalary}
+            />
           </label>
           <p className={css.popup__calculateButton}>Рассчитать</p>
         </div>
 
-        <div>
+        <div className={css.popup__mortgageWrap}>
           <p className={css.popup__subtitle}>Итого можете внести в качестве досрочных:</p>
-          <ul>
-            <li>
-              <label htmlFor="">
-                <input type="checkbox"/>
-              </label>
-            </li>
+          <ul className={css.popup__mortgageList}>
+            <li className={css.popup__mortgageItem}>
+            <input
+              type="checkbox"
+              id={'opa-1'}
+              className={css.popup__mortgageCheckbox}
+            />
+            <label
+              htmlFor="opa-1"
+              className={css.popup__mortgageLabel}
+            >
+                <span
+                  className={css.popup__mortgageValue}
+                >
+                  78000
+                </span>
+              <span
+                className={css.popup__mortgageTimeName}
+              >
+                  {` в 1-й год`}
+                </span>
+            </label>
+          </li>
           </ul>
         </div>
 
         <div className={css.popup__choiceWrap}>
           <p className={css.popup__subtitle}>Что уменьшаем?</p>
-          <ul className={css.popup__choiceListWrap}>
+          <ul className={css.popup__choiceList}>
             <li>
               <input
                 type="radio"

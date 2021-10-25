@@ -8,7 +8,7 @@
     border: 1px solid #FFFFFF;
     border-radius: 6px;
     cursor: url("/src/assets/icon/Pointer.svg"), pointer;
-    transition: all 200ms;
+    transition: all 300ms;
 }
 
 .button:hover, .button:active{
