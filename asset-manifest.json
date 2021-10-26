@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/outside-digital/static/css/main.81061361.chunk.css",
+    "main.js": "/outside-digital/static/js/main.da59d1db.chunk.js",
+    "main.js.map": "/outside-digital/static/js/main.da59d1db.chunk.js.map",
+    "runtime-main.js": "/outside-digital/static/js/runtime-main.48e827c6.js",
+    "runtime-main.js.map": "/outside-digital/static/js/runtime-main.48e827c6.js.map",
+    "static/js/2.0691ade1.chunk.js": "/outside-digital/static/js/2.0691ade1.chunk.js",
+    "static/js/2.0691ade1.chunk.js.map": "/outside-digital/static/js/2.0691ade1.chunk.js.map",
+    "index.html": "/outside-digital/index.html",
+    "static/css/main.81061361.chunk.css.map": "/outside-digital/static/css/main.81061361.chunk.css.map",
+    "static/js/2.0691ade1.chunk.js.LICENSE.txt": "/outside-digital/static/js/2.0691ade1.chunk.js.LICENSE.txt",
+    "static/media/Checkbox.module.css": "/outside-digital/static/media/Check.62a8ceae.svg",
+    "static/media/index.css": "/outside-digital/static/media/LabGrotesque-Regular.f45d8fdb.woff2",
+    "static/media/Button.module.css": "/outside-digital/static/media/Pointer.bb9e51f3.svg",
+    "static/media/Vector.beb7d290.svg": "/outside-digital/static/media/Vector.beb7d290.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48e827c6.js",
+    "static/js/2.0691ade1.chunk.js",
+    "static/css/main.81061361.chunk.css",
+    "static/js/main.da59d1db.chunk.js"
+  ]
+}
