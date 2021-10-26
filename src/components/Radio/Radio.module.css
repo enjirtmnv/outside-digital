@@ -1,0 +1,25 @@
+.popup__choiceLabel {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 6px 12px;
+    margin: 0 16px 0 0;
+    background: #EEF0F2;
+    color: #000000;
+    border-radius: 50px;
+    border: none;
+    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+    transition: all 200ms;
+}
+
+.popup__choiceRadio {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+.popup__choiceRadio:checked ~ .popup__choiceLabel {
+    background: linear-gradient(255.35deg, #DC3131 0.83%, rgba(255, 79, 79, 0) 108.93%), #FF5E56;
+    color: #FFFFFF;
+}

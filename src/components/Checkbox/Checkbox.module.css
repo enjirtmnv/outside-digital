@@ -1,0 +1,66 @@
+.popup__payItem {
+    padding: 16px 0;
+    border-bottom: 1px solid #DFE3E6;
+}
+
+.popup__payCheckbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.popup__payLabel {
+    position: relative;
+    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+    padding: 0;
+}
+
+.popup__payLabel span:nth-child(1){
+    margin: 0 0 0 31px;
+}
+
+.popup__payLabel:before {
+    content: '';
+    position: absolute;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    border: 1px solid #DFE3E6;
+    box-sizing: border-box;
+    transition: all 200ms;
+}
+
+.popup__payCheckbox:hover ~ .popup__payLabel:before{
+    border: 1px solid #000000;
+}
+
+.popup__payCheckbox:checked ~ .popup__payLabel:before{
+    background: linear-gradient(255.35deg, #DC3131 0.83%, rgba(255, 79, 79, 0) 108.93%), #FF5E56;
+    border: none;
+}
+
+.popup__payCheckbox:checked ~ .popup__payLabel:after {
+    content: url("/src/assets/icon/Check.svg");
+    position: absolute;
+    width: 14px;
+    height: 11px;
+    top: 1px;
+    left: 3px;
+}
+
+.popup__payValue{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.popup__payTimeName{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #808080;
+}

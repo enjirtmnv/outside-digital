@@ -1,14 +1,44 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import css from './Popup.module.css';
 import closeIcon from '../../assets/icon/Vector.svg'
+import Radio from "../Radio/Radio";
+import Checkbox from "../Checkbox/Checkbox";
+
 
 const Popup = ({isPopupOpen, setPopupOpen}) => {
 
   const [isRadioChoice, setRadioChoice] = useState('payment');
+  const [salary, setSalary] = useState('');
+  const [pays, setPays] = useState([]);
+
   const toggleRadio = (e) => setRadioChoice(e.target.value);
 
-  const [salary, setSalary] = useState('');
-  const handleChangeSalary = (e) => setSalary(e.target.value);
+  const handleChangeSalary = (e) => {
+    let num = e.target.value;
+    let numWithSpace = Number(num.replace(/\s+/g, '')).toLocaleString();
+    setSalary(numWithSpace);
+  };
+
+  const calculatePays = () => {
+    const salaryRemoveSpace = salary.replace(/\s+/g, '');
+    if (salaryRemoveSpace) {
+      const payArray = [];
+      let tax = 260000;
+      const taxInOneYear = Math.floor(salaryRemoveSpace * 12 * 0.13);
+      const years = Math.floor(260000 / taxInOneYear);
+      for (let i = 0; i < years; i++) {
+        if (tax - taxInOneYear > 0) {
+          tax = tax - taxInOneYear;
+          payArray.push(`${taxInOneYear.toLocaleString()} рублей`);
+        } else {
+          payArray.push(`${tax.toLocaleString()} рублей`)
+        }
+      }
+      setPays(payArray);
+    } else {
+      setPays([]);
+    }
+  };
 
   const togglePopup = () => setPopupOpen(!isPopupOpen);
   const stopPropagationContent = e => e.stopPropagation();
@@ -52,80 +82,52 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
               name={'salary'}
               value={salary}
               onChange={handleChangeSalary}
+              placeholder={'Введите данные'}
+              autoComplete="off"
+              pattern="[0-9]*"
             />
+            <p className={css.popup__salaryError}>Поле обязательно для заполнения</p>
           </label>
-          <p className={css.popup__calculateButton}>Рассчитать</p>
+          <p
+            className={css.popup__calculateButton}
+            onClick={calculatePays}
+          >Рассчитать</p>
         </div>
 
-        <div className={css.popup__mortgageWrap}>
+        <div className={css.popup__payWrap}>
           <p className={css.popup__subtitle}>Итого можете внести в качестве досрочных:</p>
-          <ul className={css.popup__mortgageList}>
-            <li className={css.popup__mortgageItem}>
-            <input
-              type="checkbox"
-              id={'opa-1'}
-              className={css.popup__mortgageCheckbox}
-            />
-            <label
-              htmlFor="opa-1"
-              className={css.popup__mortgageLabel}
-            >
-                <span
-                  className={css.popup__mortgageValue}
-                >
-                  78000
-                </span>
-              <span
-                className={css.popup__mortgageTimeName}
-              >
-                  {` в 1-й год`}
-                </span>
-            </label>
-          </li>
+          <ul className={css.popup__payList}>
+            {
+              pays.map((item, index) => {
+                return (
+                  <Checkbox
+                    pay={item}
+                    index={index}
+                    id={`payItem-${index}`}
+                  />
+                )
+              })
+            }
           </ul>
         </div>
 
         <div className={css.popup__choiceWrap}>
           <p className={css.popup__subtitle}>Что уменьшаем?</p>
           <ul className={css.popup__choiceList}>
-            <li>
-              <input
-                type="radio"
-                id={'payment'}
-                className={css.popup__choiceRadio}
-                name={'choice'}
-                value={'payment'}
-                checked={isRadioChoice === 'payment'}
-                onChange={toggleRadio}
-              />
-              <label
-                htmlFor="payment"
-                className={css.popup__choiceLabel}
-              >
-                Платеж
-              </label>
-
-            </li>
-            <li>
-              <input
-                type="radio"
-                id={'period'}
-                className={css.popup__choiceRadio}
-                name={'choice'}
-                value={'period'}
-                checked={isRadioChoice === 'period'}
-                onChange={toggleRadio}
-              />
-              <label
-                htmlFor="period"
-                className={css.popup__choiceLabel}
-              >
-                Срок
-              </label>
-            </li>
+            <Radio
+              value={'payment'}
+              text={'Платеж'}
+              isRadioChoice={isRadioChoice}
+              toggleRadio={toggleRadio}
+            />
+            <Radio
+              value={'period'}
+              text={'Срок'}
+              isRadioChoice={isRadioChoice}
+              toggleRadio={toggleRadio}
+            />
           </ul>
         </div>
-
         <button className={css.popup__addButton}>Добавить</button>
       </div>
     </div>
