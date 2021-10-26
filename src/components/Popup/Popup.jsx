@@ -35,6 +35,13 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
       setErrorLength(false);
     }
 
+    if (salaryClear && salaryClear.length > 10) {
+      setErrorLength(true);
+      return false
+    } else {
+      setErrorLength(false);
+    }
+
     if (salaryClear) {
       const taxInOneYear = calcTaxInOneYear(salaryClear);
       setPays(calcPayInOneYear(taxInOneYear));
@@ -82,7 +89,7 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
             }
             {
               errorLength
-                ? <p className={css.popup__salaryError}>Некорректная длина ввода, минимум 4. Например 1000</p>
+                ? <p className={css.popup__salaryError}>Некорректная длина ввода. Минимум 4, максимум 10. Например: 1000</p>
                 : null
             }
           </label>
