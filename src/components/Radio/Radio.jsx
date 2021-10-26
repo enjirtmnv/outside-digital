@@ -1,7 +1,7 @@
 import React from 'react';
 import css from "./Radio.module.css";
 
-const Radio = ({value, isRadioChoice, toggleRadio, text }) => {
+const Radio = ({value, isRadio, toggleRadio, text }) => {
   return (
     <li>
       <input
@@ -10,7 +10,7 @@ const Radio = ({value, isRadioChoice, toggleRadio, text }) => {
         className={css.popup__choiceRadio}
         name={'choice'}
         value={value}
-        checked={isRadioChoice === value}
+        checked={isRadio === value}
         onChange={toggleRadio}
       />
       <label

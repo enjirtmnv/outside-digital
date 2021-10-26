@@ -1,22 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import css from "./Checkbox.module.css";
+import {endingNumber} from "../../utils/utils";
 
 const Checkbox = ({pay, index, id}) => {
 
+  const [isCheck, setCheck] = useState(true);
+
   const ending = Number(String(index + 1).split('').slice(-1)[0]);
 
-  const endingNumber = (num) => {
-    const end = +num;
-    if (end === 12 || end === 13 || end ===16 || end === 17 || end === 18) {
-      return 'ый'
-    } else if (end === 1 || end === 4 || end === 5 || end === 9 || end === 0) {
-      return 'ый'
-    } else if (end === 2 || end === 6 || end === 7 || end === 8){
-      return 'oй'
-    } else if (end === 3){
-      return 'ий'
-    }
-  };
+  const toggleCheck = () => setCheck(!isCheck);
 
   return (
     <li className={css.popup__payItem}>
@@ -24,6 +16,8 @@ const Checkbox = ({pay, index, id}) => {
         type="checkbox"
         id={id}
         className={css.popup__payCheckbox}
+        checked={isCheck}
+        onChange={toggleCheck}
       />
       <label
         htmlFor={id}
