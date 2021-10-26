@@ -155,7 +155,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 425px) {
     .popup__content {
         width: 100vw;
         height: 100vh;
