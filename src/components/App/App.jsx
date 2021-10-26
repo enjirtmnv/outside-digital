@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import './App.module.css';
 import css from './App.module.css';
 import Popup from "../Popup/Popup.jsx";

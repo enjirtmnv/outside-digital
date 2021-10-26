@@ -11,7 +11,7 @@
     transition: all 300ms;
 }
 
-.button:hover, .button:active{
+.button:hover, .button:active {
     background: #FFFFFF;
     color: #000000;
 }

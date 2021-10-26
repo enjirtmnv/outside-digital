@@ -6,8 +6,6 @@ const Checkbox = ({pay, index, id}) => {
 
   const [isCheck, setCheck] = useState(true);
 
-  const ending = Number(String(index + 1).split('').slice(-1)[0]);
-
   const toggleCheck = () => setCheck(!isCheck);
 
   return (
@@ -26,8 +24,8 @@ const Checkbox = ({pay, index, id}) => {
         <span className={css.popup__payValue}>{pay}</span>
         {
           index === 1
-          ? <span className={css.popup__payTimeName}>{` во ${index + 1}-${endingNumber(ending)} год`}</span>
-            : <span className={css.popup__payTimeName}>{` в ${index + 1}-${endingNumber(ending)} год`}</span>
+            ? <span className={css.popup__payTimeName}>{` во ${index + 1}-${endingNumber(index + 1)} год`}</span>
+            : <span className={css.popup__payTimeName}>{` в ${index + 1}-${endingNumber(index + 1)} год`}</span>
         }
       </label>
     </li>

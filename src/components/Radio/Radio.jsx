@@ -1,7 +1,7 @@
 import React from 'react';
 import css from "./Radio.module.css";
 
-const Radio = ({value, isRadio, toggleRadio, text }) => {
+const Radio = ({value, isRadio, toggleRadio, text}) => {
   return (
     <li>
       <input

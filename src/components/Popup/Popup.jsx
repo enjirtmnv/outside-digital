@@ -18,7 +18,7 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
   const stopPropagationContent = e => e.stopPropagation();
   const toggleRadio = (e) => setRadio(e.target.value);
 
-  const handleChangeSalary = (e) => {
+  const handleSalary = (e) => {
     let num = e.target.value;
     let numWithSpace = Number(num.replace(/\D/g, '')).toLocaleString();
     setSalary(numWithSpace);
@@ -71,7 +71,7 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
               className={inputClasses.join(' ')}
               name={'salary'}
               value={salary}
-              onChange={handleChangeSalary}
+              onChange={handleSalary}
               placeholder={'Введите данные'}
               autoComplete="off"
             />
@@ -82,7 +82,7 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
             }
             {
               errorLength
-                ? <p className={css.popup__salaryError}>Некорректная длина ввода. Минимум 1000</p>
+                ? <p className={css.popup__salaryError}>Некорректная длина ввода, минимум 4. Например 1000</p>
                 : null
             }
           </label>

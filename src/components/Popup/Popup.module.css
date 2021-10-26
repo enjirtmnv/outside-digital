@@ -169,37 +169,41 @@
         margin: 16px 0 0 0;
     }
 
-    .popup__descr{
+    .popup__descr {
         font-size: 12px;
         line-height: 16px;
     }
-    .popup__choiceWrap{
+
+    .popup__choiceWrap {
         flex-direction: column;
         align-items: flex-start;
     }
-    .popup__choiceList{
+
+    .popup__choiceList {
         margin: 24px 0 0 0;
     }
-    .popup__choiceList li:nth-child(1){
+
+    .popup__choiceList li:nth-child(1) {
         margin: 0 8px 0 0;
     }
-    .popup__addButton{
+
+    .popup__addButton {
         font-size: 12px;
         line-height: 16px;
         padding: 12px 0;
     }
-    .popup__closeIcon{
+
+    .popup__closeIcon {
         width: 12px;
         height: 12px;
     }
+
     .popup__wrapCloseIcon {
         right: 22px;
         top: 22px;
     }
-    .popup__calculateButton{
-        margin: 0 0 24px 0;
+
+    .popup__salary {
+        padding: 7px 10px;
     }
 }
-
-
-
