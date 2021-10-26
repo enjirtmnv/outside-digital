@@ -1,3 +1,3 @@
 # Outside Digital Task
 
-Site is published at 
+App is published at https://enjirtmnv.github.io/outside-digital/
