@@ -4,13 +4,12 @@
 }
 
 .popup__payCheckbox {
-    position: absolute;
     opacity: 0;
 }
 
 .popup__payLabel {
     position: relative;
-    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+    cursor: pointer;
     padding: 0;
 }
 

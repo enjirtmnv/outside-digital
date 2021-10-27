@@ -7,7 +7,7 @@
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
     border-radius: 6px;
-    cursor: url("/src/assets/icon/Pointer.svg"), pointer;
+    cursor: pointer;
     transition: all 300ms;
 }
 
