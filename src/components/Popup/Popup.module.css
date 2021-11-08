@@ -7,6 +7,12 @@
     display: none;
     background: #B3B3B3;
     overflow: auto;
+    animation: popup 0.4s linear;
+}
+
+@keyframes popup {
+    0% {opacity: 0}
+    100% {opacity: 1}
 }
 
 .popup__content {

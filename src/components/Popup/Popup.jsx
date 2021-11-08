@@ -89,7 +89,8 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
             }
             {
               errorLength
-                ? <p className={css.popup__salaryError}>Некорректная длина ввода. Минимум 4, максимум 10. Например: 1000</p>
+                ? <p className={css.popup__salaryError}>Некорректная длина ввода. Минимум 4, максимум 10. Например:
+                  1000</p>
                 : null
             }
           </label>
@@ -98,25 +99,23 @@ const Popup = ({isPopupOpen, setPopupOpen}) => {
         <div className={css.popup__payWrap}>
           {
             pays.length
-              ? <p className={css.popup__subtitle}>Итого можете внести в качестве досрочных:</p>
-              : null
-          }
-          {
-            pays.length
-              ? <ul className={css.popup__payList}>
-                {
-                  pays.map((item, index) => {
-                    return (
-                      <Checkbox
-                        pay={item}
-                        index={index}
-                        id={`payItem-${index}`}
-                        key={`payItem-${index}`}
-                      />
-                    )
-                  })
-                }
-              </ul>
+              ? <>
+                <p className={css.popup__subtitle}>Итого можете внести в качестве досрочных:</p>
+                <ul className={css.popup__payList}>
+                  {
+                    pays.map((item, index) => {
+                      return (
+                        <Checkbox
+                          pay={item}
+                          index={index}
+                          id={`payItem-${index}`}
+                          key={`payItem-${index}`}
+                        />
+                      )
+                    })
+                  }
+                </ul>
+              </>
               : null
           }
         </div>

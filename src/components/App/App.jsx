@@ -12,7 +12,6 @@ function App() {
     <div className={css.app__wrap}>
       <Button
         togglePopup={togglePopup}
-        isPopupOpen={isPopupOpen}
       />
       {
         isPopupOpen
